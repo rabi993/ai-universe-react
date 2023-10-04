@@ -14,6 +14,8 @@ const App = () => {
       
 
       <Card></Card>
+
+      <Button> See More</Button>
     </>
   );
 };
