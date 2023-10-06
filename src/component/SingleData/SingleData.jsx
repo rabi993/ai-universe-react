@@ -1,8 +1,8 @@
 import React from 'react';
 
 const SingleData = (props) => {
-    console.log(props.singleData);
-    const {id, image, features, name ,published_in}= props.singleData;
+    // console.log(props.singleData);
+    const {id, image, features, name ,published_in}= props ?.singleData;
     
     // const handleId =(id) =>{
     //   console.log(id)
@@ -17,7 +17,7 @@ const SingleData = (props) => {
     
     <h3 className=" font-semibold">Features:</h3>
     
-      {features.map((feature, index) =>(
+      {features ?.map((feature, index) =>(
         <p className='px-3'> {index + 1}. {feature}</p>
       ))}
 
@@ -36,7 +36,7 @@ const SingleData = (props) => {
       <p> {published_in}</p>
     </div>
     <div>
-      <label onClick={()=>props.setUniqueId(id)} htmlFor="my_modal_5" className='cursor-pointer'>
+      <label onClick={()=>props ?.setUniqueId(id)} htmlFor="my_modal_5" className='cursor-pointer'>
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
   <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
 </svg>

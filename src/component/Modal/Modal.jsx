@@ -10,14 +10,14 @@ const Modal = (props) => {
             <div className="modal-box w-11/12 max-w-5xl">
             <div className="card lg:card-side bg-base-100 ">
                 
-                <div className="card-body">
+                <div className="card-body border-2 border-error mr-2">
                     <h2 className="card-title">
                         {description ? description: "Not Found"}</h2>
                     
                     <div className='flex justify-between'>
                     <div>
                         <h1 className='text-xl font-bold'>Features</h1>
-                        {Object.values(features || {}).map((value) => (<p>{value.feature_name ? value.feature_name : "Not Found"}</p>
+                        {Object.values(features || {}) && Object.values(features || {}).map((value) => (<p>{value.feature_name ? value.feature_name : "Not Found"}</p>
                         ))}
                     </div>
                     <div>
@@ -32,7 +32,10 @@ const Modal = (props) => {
                   
                 
                 </div>
-                <figure><img src={image_link? image_link[0] : null} alt="No Image"/></figure>
+                {/* <figure><img src={image_link? image_link[0] : null} alt="No Image"/></figure> */}
+
+                <figure className='w-full'><img className='w-full h-64' src={image_link && image_link[0]} alt="No Image"/></figure>
+
                 </div>
                 <div className="modal-action">
                 <label htmlFor="my_modal_5" className="btn">Close!</label>
