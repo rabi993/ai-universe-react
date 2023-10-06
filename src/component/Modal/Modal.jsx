@@ -1,7 +1,8 @@
 import React from 'react';
 
 const Modal = (props) => {
-    const {image_link, description, integration, features} = props.singleData;
+    const {image_link, description, integrations, features} = props.singleData;
+    // console.log(integrations)
     return (
         <>
             <input type="checkbox" id="my_modal_5" className="modal-toggle" />
@@ -16,9 +17,14 @@ const Modal = (props) => {
                     <div className='flex justify-between'>
                     <div>
                         <h1 className='text-xl font-bold'>Features</h1>
+                        {Object.values(features || {}).map((value) => (<p>{value.feature_name ? value.feature_name : "Not Found"}</p>
+                        ))}
                     </div>
                     <div>
                         <h1 className='text-xl font-bold'>Integrations</h1>
+                        {integrations && integrations.map((int) => (
+                            <p>{int ? int : "Not Found"}</p>
+                        ))}
                     </div>
                     </div>
 
