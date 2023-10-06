@@ -10,11 +10,20 @@ const Modal = (props) => {
             <div className="card lg:card-side bg-base-100 ">
                 
                 <div className="card-body">
-                    <h2 className="card-title">New album is released!</h2>
-                    <p>Click the button to listen on Spotiwhy app.</p>
-                    <div className="card-actions justify-end">
-                    <button className="btn btn-primary">Listen</button>
-                </div>
+                    <h2 className="card-title">
+                        {description ? description: "Not Found"}</h2>
+                    
+                    <div className='flex justify-between'>
+                    <div>
+                        <h1 className='text-xl font-bold'>Features</h1>
+                    </div>
+                    <div>
+                        <h1 className='text-xl font-bold'>Integrations</h1>
+                    </div>
+                    </div>
+
+
+                  
                 
                 </div>
                 <figure><img src={image_link? image_link[0] : null} alt="No Image"/></figure>
